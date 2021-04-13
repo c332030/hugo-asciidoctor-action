@@ -1,5 +1,5 @@
 
-name: 'Hugo Asciidoctor Action'
+name: 'Hugo Action for Asciidoc'
 
 description: 'Action for build hugo while write in asciidoc.'
 
