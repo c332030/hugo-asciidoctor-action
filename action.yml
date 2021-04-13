@@ -3,6 +3,10 @@ name: 'Hugo Action for Asciidoc'
 
 description: 'Action for build hugo while write in asciidoc.'
 
+branding:
+  icon: 'activity'
+  color: 'orange'
+
 inputs:
   source-repo:
     description: 'hugo source repo.'
