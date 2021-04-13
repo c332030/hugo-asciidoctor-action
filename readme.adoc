@@ -1,0 +1,31 @@
+
+= git mirror action
+
+== step
+
+- add SECRETS with the name SSH_PRIVATE_KEY for git clone
+- create a repo to save hugo public file, such as github pages repo
+- add .github/workflows/hugo.yml into a repository with follow content
+- push
+
+[source,yaml]
+----
+
+name: hugo
+
+on: push
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: c332030/hugo-asciidoctor-action@1.0
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        with:
+          source-repo: git@github.com:${{ github.repository_owner }}/${{ github.event.repository.name }}.git
+          build-repo: git@github.com:${{ github.repository_owner }}/${{ github.repository_owner }}.github.io.git
+
+----
+
+modify from wearerequired/git-mirror-action

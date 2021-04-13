@@ -1,0 +1,21 @@
+
+name: 'Hugo Asciidoctor Action'
+
+description: 'Action for build hugo while write in asciidoc.'
+
+inputs:
+  source-repo:
+    description: 'hugo source repo.'
+    required: true
+    default: ''
+  build-repo:
+    description: 'static file repo, such as github pages repo.'
+    required: true
+    default: ''
+
+runs:
+  using: 'docker'
+  image: docker://c332030/hugo-asciidoctor
+  args:
+    - ${{ inputs.source-repo }}
+    - ${{ inputs.build-repo }}
