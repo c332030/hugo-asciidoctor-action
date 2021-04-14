@@ -30,5 +30,3 @@ jobs:
           command: echo hello world
 
 ----
-
-modify from wearerequired/git-mirror-action
