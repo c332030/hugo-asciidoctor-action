@@ -11,10 +11,12 @@ inputs:
   source-repo:
     description: 'hugo source repo.'
     required: true
-    default: ''
   build-repo:
     description: 'static file repo, such as github pages repo.'
     required: true
+  command:
+    description: 'Exec command after build.'
+    required: false
     default: ''
 
 runs:
@@ -23,3 +25,4 @@ runs:
   args:
     - ${{ inputs.source-repo }}
     - ${{ inputs.build-repo }}
+    - ${{ inputs.command }}
