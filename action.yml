@@ -14,10 +14,6 @@ inputs:
   build-repo:
     description: 'static file repo, such as github pages repo.'
     required: true
-  command:
-    description: 'Exec command after build.'
-    required: false
-    default: ''
 
 runs:
   using: 'docker'
@@ -25,4 +21,3 @@ runs:
   args:
     - ${{ inputs.source-repo }}
     - ${{ inputs.build-repo }}
-    - ${{ inputs.command }}
