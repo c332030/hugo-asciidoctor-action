@@ -19,11 +19,11 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: c332030/hugo-asciidoctor-action@1.0.0
+      - uses: cc332030/hugo-asciidoctor-action@1.0.0
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          USER: ${{ github.repository_owner }}
-          EMAIL: ${{ github.repository_owner }}@gmail.com
+          USER: ${{ github.actor }}
+          EMAIL: ${{ github.actor }}@gmail.com
           COMMAND: ssh -o LogLevel=ERROR -p 22 root@127.0.0.1 cd /usr/local/nginx/html && git pull > /dev/null 2>&1
         with:
           source-repo: git@github.com:${{ github.repository_owner }}/${{ github.event.repository.name }}.git
