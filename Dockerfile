@@ -1,6 +1,6 @@
-FROM alpine
+FROM ubuntu
 
-RUN apk add --no-cache \
+RUN apt install -y \
     curl  \
     git openssh-client  \
     hugo asciidoctor
