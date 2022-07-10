@@ -1,10 +1,9 @@
-FROM ubuntu
+FROM alpine
 
-RUN apt update && \
-    apt install -y \
-      sudo curl \
-      git openssh-client \
-      hugo asciidoctor
+RUN apk add --no-cache \
+    curl \
+    git openssh-client \
+    hugo asciidoctor
 
 ADD *.sh /
 
