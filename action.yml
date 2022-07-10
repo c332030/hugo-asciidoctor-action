@@ -17,7 +17,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: docker://c332030/hugo-asciidoctor
+  image: 'Dockerfile'
   args:
     - ${{ inputs.source-repo }}
     - ${{ inputs.build-repo }}
