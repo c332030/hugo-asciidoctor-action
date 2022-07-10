@@ -1,6 +1,7 @@
 FROM ubuntu
 
-RUN apt install -y \
+RUN apt update && \
+    apt install -y \
     curl  \
     git openssh-client  \
     hugo asciidoctor
