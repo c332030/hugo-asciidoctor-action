@@ -8,10 +8,10 @@ branding:
   color: 'orange'
 
 inputs:
-  source-repo:
+  source:
     description: 'hugo source repo.'
     required: true
-  build-repo:
+  build:
     description: 'static file repo, such as github pages repo.'
     required: true
 
@@ -19,5 +19,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.source-repo }}
-    - ${{ inputs.build-repo }}
+    - ${{ inputs.source }}
+    - ${{ inputs.build }}
