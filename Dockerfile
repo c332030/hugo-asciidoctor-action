@@ -2,9 +2,9 @@ FROM ubuntu
 
 RUN apt update && \
     apt install -y \
-    curl  \
-    git openssh-client  \
-    hugo asciidoctor
+      sudo curl \
+      git openssh-client \
+      hugo asciidoctor
 
 ADD *.sh /
 
