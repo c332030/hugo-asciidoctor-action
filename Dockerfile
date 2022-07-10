@@ -1,6 +1,7 @@
 FROM alpine
 
 RUN apk add --no-cache \
+    curl  \
     git openssh-client  \
     hugo asciidoctor
 
