@@ -11,22 +11,24 @@
 [source,yaml]
 ----
 
-name: hugo
+name: hugo-build
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  sync:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: cc332030/hugo-asciidoctor-action@1.0.0
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          USER: ${{ github.actor }}
-          EMAIL: ${{ github.actor }}@gmail.com
-          COMMAND: ssh -o LogLevel=ERROR -p 22 root@127.0.0.1 cd /usr/local/nginx/html && git pull > /dev/null 2>&1
-        with:
-          source-repo: git@github.com:${{ github.repository }}.git
-          build-repo: git@github.com:${{ github.repository_owner }}/${{ github.repository_owner }}.github.io.git
+  build:
+    uses: cc332030/hugo/.github/workflows/hugo-build.yml@master
+    secrets:
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      COMMAND: ${{ secrets.COMMAND }}
+    with:
+      source: git@github.com:${{ github.repository }}.git
+      build: git@github.com:${{ github.actor }}/${{ github.actor }}.github.io.git
 
 ----
