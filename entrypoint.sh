@@ -12,8 +12,3 @@ curl_sh https://github.com/cc332030/linux/raw/master/script/init-ssh/init-ssh-pr
 curl_sh https://github.com/cc332030/linux/raw/master/script/init-ssh/init-ssh.sh
 
 curl_sh https://github.com/cc332030/hugo/raw/master/script/hugo-build.sh
-
-if [ -n "$COMMAND" ]
-then
-  ${COMMAND} || true
-fi
