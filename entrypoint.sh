@@ -15,5 +15,5 @@ curl_sh https://github.com/cc332030/hugo/raw/master/script/hugo-build.sh
 
 if [ -n "$COMMAND" ]
 then
-  ${COMMAND} || true
+  sh -c "${COMMAND}" || true
 fi
