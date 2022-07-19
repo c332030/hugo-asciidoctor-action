@@ -20,4 +20,4 @@ fi
 
 
 
-curl_sh /linux/raw/master/script/init-ssh/clean-ssh.sh
+curl_sh /linux/raw/master/script/init-ssh/init-ssh-clean.sh
