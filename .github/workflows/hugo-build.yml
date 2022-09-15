@@ -13,8 +13,18 @@ on:
     secrets:
       SSH_PRIVATE_KEY:
         required: true
-      COMMAND:
-        required: true
+      HOST:
+        required: false
+      PORT:
+        required: false
+      ORIGIN_PATH:
+        required: false
+      REMOTE_PATH:
+        required: false
+      PREPARE_COMMAND:
+        required: false
+      ACTION_COMMAND:
+        required: false
 
 jobs:
   build:
