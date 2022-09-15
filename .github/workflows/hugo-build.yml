@@ -26,6 +26,15 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           USER: ${{ github.actor }}
           EMAIL: ${{ github.actor }}@gmail.com
+
+          # deploy config
+          HOST: ${{ secrets.HOST }}
+          PORT: ${{ secrets.PORT }}
+          ORIGIN_PATH: ${{ secrets.ORIGIN_PATH }}
+          REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
+          PREPARE_COMMAND: ${{ secrets.PREPARE_COMMAND }}
+          ACTION_COMMAND: ${{ secrets.ACTION_COMMAND }}
+
           COMMAND: ${{ secrets.COMMAND }}
         with:
           source: ${{ inputs.source }}
