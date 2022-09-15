@@ -34,8 +34,6 @@ jobs:
           REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
           PREPARE_COMMAND: ${{ secrets.PREPARE_COMMAND }}
           ACTION_COMMAND: ${{ secrets.ACTION_COMMAND }}
-
-          COMMAND: ${{ secrets.COMMAND }}
         with:
           source: ${{ inputs.source }}
           build: ${{ inputs.build }}

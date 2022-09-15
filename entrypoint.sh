@@ -18,11 +18,4 @@ then
   curl_sh https://github.com/cc332030/linux/raw/master/script/deploy/deploy.sh
 fi
 
-if [ -n "$COMMAND" ]
-then
-  sh -c "${COMMAND}" || true
-fi
-
-
-
 curl_sh /linux/raw/master/script/init-ssh/init-ssh-clean.sh
