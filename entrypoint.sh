@@ -13,11 +13,9 @@ curl_sh https://github.com/cc332030/linux/raw/master/script/init-ssh/init-ssh.sh
 
 curl_sh https://github.com/cc332030/hugo/raw/master/script/hugo-build.sh
 
-if [ -n "$COMMAND" ]
+if [ -n "$REMOTE_PATH" ]
 then
-  sh -c "${COMMAND}" || true
+  curl_sh https://github.com/cc332030/linux/raw/master/script/deploy/deploy.sh
 fi
-
-
 
 curl_sh /linux/raw/master/script/init-ssh/init-ssh-clean.sh
