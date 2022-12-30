@@ -30,3 +30,13 @@ jobs:
         with:
           source: ${{ inputs.source }}
           build: ${{ inputs.build }}
+      - id: artifact-name
+        name: artifact-name
+        run: |
+          echo "artifact-name=${{ github.event.repository.name }}.${{ github.ref_name }}.${{ github.run_id }}" >> $GITHUB_OUTPUT
+      - name: upload-artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ steps.artifact-name.outputs.artifact-name }}
+          path: |
+            build
